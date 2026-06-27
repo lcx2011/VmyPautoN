@@ -1,0 +1,15 @@
+proxies:
+- name: 自动节点-1
+  type: http
+  server: cc4655b6-thf400-thfop7-k599.hel1-dc2.ukuaishou.com
+  port: 443
+  tls: true
+  sni: cc4655b6-thf400-thfop7-k599.hel1-dc2.ukuaishou.com
+  skip-cert-verify: false
+- name: 自动节点-2
+  type: http
+  server: ad75617e-thf400-thfop7-k599.nbg1-dc4.ukuaishou.com
+  port: 443
+  tls: true
+  sni: ad75617e-thf400-thfop7-k599.nbg1-dc4.ukuaishou.com
+  skip-cert-verify: false

@@ -1,0 +1,30 @@
+{
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "http",
+      "tag": "自动节点-1",
+      "server": "cc4655b6-thf400-thfop7-k599.hel1-dc2.ukuaishou.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "cc4655b6-thf400-thfop7-k599.hel1-dc2.ukuaishou.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "http",
+      "tag": "自动节点-2",
+      "server": "ad75617e-thf400-thfop7-k599.nbg1-dc4.ukuaishou.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "ad75617e-thf400-thfop7-k599.nbg1-dc4.ukuaishou.com",
+        "insecure": false
+      }
+    }
+  ]
+}
