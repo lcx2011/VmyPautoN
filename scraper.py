@@ -26,6 +26,24 @@ def run_smart_automation(headless=True):
             args=args
         )
         
+        print("🔍 正在获取动态生成的插件 ID...")
+        # 等待 service worker 加载
+        background_worker = None
+        for _ in range(50):
+            if browser_context.service_workers:
+                background_worker = browser_context.service_workers[0]
+                break
+            time.sleep(0.1)
+            
+        if not background_worker:
+            raise Exception("❌ 无法获取插件的 background worker，请检查插件是否正常加载。")
+            
+        extension_id = background_worker.url.split("/")[2]
+        print(f"✅ 成功获取插件 ID: {extension_id}")
+        
+        dynamic_register_url = f"chrome-extension://{extension_id}/options.html#/signup"
+        dynamic_popup_url = f"chrome-extension://{extension_id}/popup.html"
+        
         # 1. 临时邮箱
         print("📧 正在打开临时邮箱...")
         mail_page = browser_context.new_page()
@@ -58,7 +76,7 @@ def run_smart_automation(headless=True):
         print("📝 开始智能填充注册表单...")
         reg_page = browser_context.new_page()
         time.sleep(2) 
-        reg_page.goto(config.REGISTER_URL)
+        reg_page.goto(dynamic_register_url)
         
         email_input = reg_page.locator("input[type='email'], input[name*='mail' i]").first
         email_input.wait_for(state="visible", timeout=10000)
@@ -137,7 +155,7 @@ def run_smart_automation(headless=True):
         print("🖱️ 正在模拟点击插件图标以触发网络配置下发...")
         popup_page = browser_context.new_page()
         try:
-            popup_page.goto(config.POPUP_URL)
+            popup_page.goto(dynamic_popup_url)
             popup_page.wait_for_load_state("networkidle", timeout=10000)
             print("⏳ 等待 8 秒让其完成握手...")
             time.sleep(8) 
