@@ -62,12 +62,26 @@ def update_singbox_json(nodes):
         
     outbounds = []
     
-    # 增加一个默认直接连接，很多配置需要
+    # 获取所有的节点标签，用于放入“节点选择”组
+    node_tags = []
+    for idx, (server, port) in enumerate(nodes):
+        tag = f"自动节点-{idx + 1}"
+        node_tags.append(tag)
+        
+    # 添加“节点选择”出站
     outbounds.append({
-        "type": "direct",
-        "tag": "direct"
+        "type": "selector",
+        "tag": "节点选择",
+        "outbounds": node_tags
     })
     
+    # 增加默认直接连接
+    outbounds.append({
+        "type": "direct",
+        "tag": "直连"
+    })
+    
+    # 组装具体节点
     for idx, (server, port) in enumerate(nodes):
         outbound = {
             "type": "http",
@@ -82,7 +96,24 @@ def update_singbox_json(nodes):
         }
         outbounds.append(outbound)
         
+    # 组装完整的 dns 配置
+    dns_config = {
+        "servers": [
+            {
+                "tag": "dns-remote",
+                "address": "https://8.8.8.8/dns-query",
+                "detour": "节点选择"
+            },
+            {
+                "tag": "dns-local",
+                "address": "223.5.5.5",
+                "detour": "直连"
+            }
+        ]
+    }
+        
     singbox_config = {
+        "dns": dns_config,
         "outbounds": outbounds
     }
     
