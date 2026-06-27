@@ -1,0 +1,52 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "节点选择"
+      },
+      {
+        "tag": "dns-local",
+        "address": "223.5.5.5",
+        "detour": "直连"
+      }
+    ]
+  },
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "节点选择",
+      "outbounds": [
+        "自动节点-1",
+        "自动节点-2"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "直连"
+    },
+    {
+      "type": "http",
+      "tag": "自动节点-1",
+      "server": "2ffb1e80-thf400-thfpk4-k59q.nbg1-dc4.ukuaishou.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "2ffb1e80-thf400-thfpk4-k59q.nbg1-dc4.ukuaishou.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "http",
+      "tag": "自动节点-2",
+      "server": "641739d8-thf400-thfpk4-k59q.hel1-dc2.ukuaishou.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "641739d8-thf400-thfpk4-k59q.hel1-dc2.ukuaishou.com",
+        "insecure": false
+      }
+    }
+  ]
+}
