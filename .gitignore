@@ -1,0 +1,4 @@
+__pycache__/
+chrome_temp_data/
+*.pyc
+.env
