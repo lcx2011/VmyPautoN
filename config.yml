@@ -20,3 +20,11 @@ proxies:
   tls: true
   sni: 3534e49b-thq800-0-k4q1.oneothree.ukuaishou.com
   skip-cert-verify: false
+- name: 自动节点-4
+  type: http
+  server: f278d58d-thq800-0-k4q1.twoofour.ukuaishou.com
+  port: 19717
+  tls: true
+  sni: f278d58d-thq800-0-k4q1.twoofour.ukuaishou.com
+  skip-cert-verify: false
+  
