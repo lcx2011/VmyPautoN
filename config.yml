@@ -13,3 +13,10 @@ proxies:
   tls: true
   sni: 231d55e9-thmio0-thmq7g-k757.nbg1-dc4.ukuaishou.com
   skip-cert-verify: false
+- name: 自动节点-3
+  type: http
+  server: 3534e49b-thq800-0-k4q1.oneothree.ukuaishou.com
+  port: 19717
+  tls: true
+  sni: 3534e49b-thq800-0-k4q1.oneothree.ukuaishou.com
+  skip-cert-verify: false
