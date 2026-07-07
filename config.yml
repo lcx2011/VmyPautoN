@@ -1,30 +1,15 @@
 proxies:
 - name: 自动节点-1
   type: http
-  server: f7eb9cf7-thmio0-thmq7g-k757.hel1-dc2.ukuaishou.com
+  server: 1d9baaf4-thx0g0-thx6ob-k9yw.hel1-dc2.ukuaishou.com
   port: 443
   tls: true
-  sni: f7eb9cf7-thmio0-thmq7g-k757.hel1-dc2.ukuaishou.com
+  sni: 1d9baaf4-thx0g0-thx6ob-k9yw.hel1-dc2.ukuaishou.com
   skip-cert-verify: false
 - name: 自动节点-2
   type: http
-  server: 231d55e9-thmio0-thmq7g-k757.nbg1-dc4.ukuaishou.com
+  server: bd3e52f7-thx0g0-thx6ob-k9yw.nbg1-dc4.ukuaishou.com
   port: 443
   tls: true
-  sni: 231d55e9-thmio0-thmq7g-k757.nbg1-dc4.ukuaishou.com
+  sni: bd3e52f7-thx0g0-thx6ob-k9yw.nbg1-dc4.ukuaishou.com
   skip-cert-verify: false
-- name: 自动节点-3
-  type: http
-  server: 3534e49b-thq800-0-k4q1.oneothree.ukuaishou.com
-  port: 19717
-  tls: true
-  sni: 3534e49b-thq800-0-k4q1.oneothree.ukuaishou.com
-  skip-cert-verify: false
-- name: 自动节点-4
-  type: http
-  server: f278d58d-thq800-0-k4q1.twoofour.ukuaishou.com
-  port: 19717
-  tls: true
-  sni: f278d58d-thq800-0-k4q1.twoofour.ukuaishou.com
-  skip-cert-verify: false
-  
