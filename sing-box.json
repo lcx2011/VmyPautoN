@@ -29,22 +29,22 @@
     {
       "type": "http",
       "tag": "自动节点-1",
-      "server": "409bc72c-tj4800-tj4cte-kl5q.hel1-dc2.ukuaishou.com",
+      "server": "c0e5ccd4-tj9s00-tj9xhs-kmjk.hel1-dc2.ukuaishou.com",
       "server_port": 443,
       "tls": {
         "enabled": true,
-        "server_name": "409bc72c-tj4800-tj4cte-kl5q.hel1-dc2.ukuaishou.com",
+        "server_name": "c0e5ccd4-tj9s00-tj9xhs-kmjk.hel1-dc2.ukuaishou.com",
         "insecure": false
       }
     },
     {
       "type": "http",
       "tag": "自动节点-2",
-      "server": "460ab522-tj4800-tj4cte-kl5q.nbg1-dc4.ukuaishou.com",
+      "server": "84030601-tj9s00-tj9xhs-kmjk.nbg1-dc4.ukuaishou.com",
       "server_port": 443,
       "tls": {
         "enabled": true,
-        "server_name": "460ab522-tj4800-tj4cte-kl5q.nbg1-dc4.ukuaishou.com",
+        "server_name": "84030601-tj9s00-tj9xhs-kmjk.nbg1-dc4.ukuaishou.com",
         "insecure": false
       }
     }
